@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Java Script</title> 
+ </head>
+<body>
+<h1> Author entry pavan kalyan busha </h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="Hidden-author">Hidden author name </label>
+    <input type ="password" id="Hidden-author" name="Hidden-author" min=10 max=50 step=2 value=Dickens> <br>
+
+    <label for="Guess-the-author">guess the author </label>
+    <input type ="text" id="Guess-the-author" > <br>
+
+    <input type="button" onclick="checkauthor()" value="check the guess">
+</form>
+
+
+<p>Result</p>
+   <div id="result"> Good:0 ,  oops:0</div> 
+
+<script> 
+
+var good=0;
+var oops=0;
+
+function checkauthor(){
+    var hiddenInput = document.getElementById("Hidden-author");
+    var guessInput = document.getElementById("Guess-the-author");
+    var result= document.getElementById("result");
+    var hiddenauthor=hiddenInput.value;
+    var guessauthor=guessInput.value
+    if(hiddenauthor===guessauthor){
+        alert("You got it right");
+        good++;
+    }
+    else{
+        oops++;
+        alert("Sorry");
+    }
+   result.innerHTML= "Good: "+ good + ", Oops: " +oops;
+    
+}
+
+</script>
+
+</body>
+</html> 
