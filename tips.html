@@ -30,26 +30,26 @@
     <script>
 
         function tips() {
-            var baseV = parseInt(document.getElementById("base").value);
-            var tipV = parseInt(document.getElementById("tip").value);
+            var base = parseInt(document.getElementById("base").value);
+            var tip = parseInt(document.getElementById("tip").value);
             var myOutput = "";
             for (var i = 0; i < 5; i++) {
-                myOutput = myOutput + (tipV + "% is ") + (baseV * (tipV / 100)).toFixed(2) + "; ";
-                tipV = tipV + 4;
+                myOutput = myOutput + (tip + "% is ") + (base * (tipV / 100)).toFixed(2) + "; ";
+                tip = tip + 4;
             }
             document.getElementById("result").innerHTML = "Tip are: " + (myOutput);
 
         }
 
         function chooseOp() {
-            var baseV = parseInt(document.getElementById("base").value);
-            var tipV = parseInt(document.getElementById("tip").value);
+            var base = parseInt(document.getElementById("base").value);
+            var tip = parseInt(document.getElementById("tip").value);
             if (document.getElementById("add").checked)
-                document.getElementById("resultRad").innerHTML = "Sum of " + baseV + " and " + tipV + " is " + (baseV + tipV);
+                document.getElementById("resultRad").innerHTML = "Sum of " + base + " and " + tipV + " is " + (base + tip);
             else if (document.getElementById("diff").checked)
-                document.getElementById("resultRad").innerHTML = "difference of " + baseV + " and " + tipV + " is " + (baseV - tipV);
+                document.getElementById("resultRad").innerHTML = "difference of " + base + " and " + tip + " is " + (base - tip);
             else
-                document.getElementById("resultRad").innerHTML = "Product of " + baseV + " and " + tipV + " is " + (baseV * tipV);
+                document.getElementById("resultRad").innerHTML = "Product of " + base + " and " + tip + " is " + (base * tip);
         }
     </script>
 
