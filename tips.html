@@ -34,7 +34,7 @@
             var tip = parseInt(document.getElementById("tip").value);
             var myOutput = "";
             for (var i = 0; i < 5; i++) {
-                myOutput = myOutput + (tip + "% is ") + (base * (tipV / 100)).toFixed(2) + "; ";
+                myOutput = myOutput + (tip + "% is ") + (base * (tip / 100)).toFixed(2) + "; ";
                 tip = tip + 4;
             }
             document.getElementById("result").innerHTML = "Tip are: " + (myOutput);
@@ -45,7 +45,7 @@
             var base = parseInt(document.getElementById("base").value);
             var tip = parseInt(document.getElementById("tip").value);
             if (document.getElementById("add").checked)
-                document.getElementById("resultRad").innerHTML = "Sum of " + base + " and " + tipV + " is " + (base + tip);
+                document.getElementById("resultRad").innerHTML = "Sum of " + base + " and " + tip + " is " + (base + tip);
             else if (document.getElementById("diff").checked)
                 document.getElementById("resultRad").innerHTML = "difference of " + base + " and " + tip + " is " + (base - tip);
             else
