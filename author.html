@@ -20,12 +20,12 @@
 
 <p>Result</p>
    <div id="result"> Good:0 ,  oops:0</div> 
-
+<img src="Austin.jpg" alt="Austin" id= "imageChangeOnClick" width="100px" height="100px" onclick="selectImage()">
 <script> 
 
 var good=0;
 var oops=0;
-
+var useImage=1;
 function checkauthor(){
     var hiddenInput = document.getElementById("Hidden-author");
     var guessInput = document.getElementById("Guess-the-author");
@@ -40,9 +40,24 @@ function checkauthor(){
         oops++;
         alert("Sorry");
     }
-   result.innerHTML= "Good: "+ good + ", Oops: " +oops;
-    
+   result.innerHTML= "Good: "+ good + ", Oops: " +oops; 
 }
+function selectImage() {
+           switch(useImage){
+              case 1:
+                document.getElementById("imageChangeOnClick").src="Austin.jpg";
+                useImage++;
+                break;
+              case 2:
+                document.getElementById("imageChangeOnClick").src="bombay.jpg";
+                useImage++;
+                break;
+              case 3:
+              document.getElementById("imageChangeOnClick").src="Hamburg.jpg";
+                useImage=1;
+                break;
+           }
+        }
 
 </script>
 
