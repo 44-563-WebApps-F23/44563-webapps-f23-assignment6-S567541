@@ -2,6 +2,12 @@
 <html>
  <head>
     <title>Java Script</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
  </head>
 <body>
 <h1> Author entry pavan kalyan busha </h1>
@@ -14,12 +20,13 @@
     <label for="Guess-the-author">guess the author </label>
     <input type ="text" id="Guess-the-author" > <br>
 
-    <input type="button" onclick="checkauthor()" value="check the guess">
+    <input class="btn btn-secondary"type="button" onclick="checkauthor()" value="check the guess">
 </form>
 
 
 <p>Result</p>
    <div id="result"> Good:0 ,  oops:0</div> 
+   <div id="incorrect"></div>
 <img src="Austin.jpg" alt="Austin" id= "imageChangeOnClick" width="100px" height="100px" onclick="selectImage()">
 <script> 
 
@@ -37,10 +44,17 @@ function checkauthor(){
         good++;
     }
     else{
+       if(oops>=7){
+        document.getElementById("inButton").onclick=incorrect();
+       }
         oops++;
         alert("Sorry");
+        document.getElementById("incorrect").innerHTML="you made "+oops+" Incorrect guesses";
     }
    result.innerHTML= "Good: "+ good + ", Oops: " +oops; 
+}
+function incorrect(){
+  alert("Sorry, ran out of guesses")
 }
 function selectImage() {
            switch(useImage){
